@@ -3,11 +3,11 @@
 <?php
 //Creating rss feed
 
-$rss=new DOMDocument();
+$doc=new DOMDocument();
 
 
 $rss=$doc->createElement('rss');
-$doc->createElement('channel');
+$channel=$doc->createElement('channel');
 $doc->createElement('item');
 $doc->createElement('title');
 $doc->createElement('link');
