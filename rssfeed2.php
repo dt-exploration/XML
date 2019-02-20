@@ -1,7 +1,7 @@
 <?php
 header('content-type:text/xml');
 
-$doc=new DomDocument();
+$doc = new DomDocument();
 
 $bookstore = $doc->createElement('knjizara');
 

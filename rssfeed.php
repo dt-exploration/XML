@@ -2,11 +2,11 @@
 header('content-type: text/xml');
 
 //Creating rss feed
-$doc=new DOMDocument();
+$doc = new DOMDocument();
 
-$rss=$doc->createElement('rss');
+$rss=  $doc->createElement('rss');
 $rss->setAttribute('version','2.0');
-$channel=$doc->createElement('channel');
+$channel = $doc->createElement('channel');
 
 $c_title = $doc->createElement('title','Dreamscape');
 $c_link = $doc->createElement('link','https://www.dreamscape.games');
@@ -21,7 +21,7 @@ $channel->appendChild($c_link);
 $channel->appendChild($c_description);
 $channel->appendChild($c_language);
 
-$matrix=array(
+$matrix = array(
               1 => array(
                          'title' => 'Site 1'
                          'link' => 'https://www.google.com'
@@ -33,12 +33,12 @@ $matrix=array(
                          'description' => 'Video database';
                         )
              )
-foreach($matrix as $d) {
+foreach ($matrix as $d) {
 
     $item = $doc->createElement('item');
-    $i_title = $doc->createElement('title',$d['title']);
-    $i_link = $doc->createElement('link',$d['link']);
-    $i_description = $doc->createElement('description',$d['description']);
+    $i_title = $doc->createElement('title', $d['title']);
+    $i_link = $doc->createElement('link', $d['link']);
+    $i_description = $doc->createElement('description', $d['description']);
 
     $item->appendChild($i_title);
     $item->appendChild($i_link);
@@ -49,7 +49,7 @@ foreach($matrix as $d) {
 }
 
 
-$et=$doc->saveXML();
+$et = $doc->saveXML();
 
 echo $et;
 
